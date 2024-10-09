@@ -1,0 +1,8 @@
+{
+  "id" : "1",
+  "location" : "Prague",
+  "person" : {
+    "name" : "Alice",
+    "surname" : "Johnson"
+  }
+}

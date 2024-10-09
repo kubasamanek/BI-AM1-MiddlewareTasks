@@ -1,8 +1,8 @@
 {
-  "id" : "1",
-  "location" : "Prague",
+  "id" : "2",
+  "location" : "Paris",
   "person" : {
-    "name" : "Alice",
-    "surname" : "Johnson"
+    "name" : "John",
+    "surname" : "Doe"
   }
 }
