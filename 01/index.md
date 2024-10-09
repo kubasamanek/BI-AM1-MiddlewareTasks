@@ -22,9 +22,6 @@ The API accepts a plain text input via a POST request and returns the transforme
 
 **Content-Type:** text/plain
 
-### Example request
-
-
 ### Example Input:
  ```plaintext
 Dear Sir or Madam,
