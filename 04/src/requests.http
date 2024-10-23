@@ -1,0 +1,22 @@
+### Get all tours
+GET http://localhost:3000/tours
+Accept: application/json
+
+### Get a specific tour
+GET http://localhost:3000/tours/1
+Accept: application/json
+
+### Initiate deletion of a tour 
+DELETE http://localhost:3000/tours/1
+Accept: application/json
+
+### Check status of a tour 
+GET http://localhost:3000/tours/1/status
+Accept: application/json
+
+### Cancel pending deletion of a tour 
+POST http://localhost:3000/tours/1/cancel
+Accept: application/json
+
+
+
