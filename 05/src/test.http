@@ -1,0 +1,50 @@
+### Get all tours 
+GET http://localhost:3000/tours
+Accept: application/json
+
+###
+
+### Conditional GET with CORRECT Strong ETag
+GET http://localhost:3000/tours
+Accept: application/json
+If-None-Match: c8d10e4e9b36c2ebd0581b46c2236b40
+
+###
+
+### Conditional GET with WRONG Strong ETag
+GET http://localhost:3000/tours
+Accept: application/json
+If-None-Match: c8d10e4e9b36c2ebd0581b46c2236b4
+
+###
+
+### Conditional GET with CORRECT Weak ETag
+# Add ?weak=true to use the weak ETag generation
+GET http://localhost:3000/tours?weak=true
+Accept: application/json
+If-None-Match: 8f3bc8a6718aad66f63990a7a7368183
+
+###
+
+### Conditional GET with WRONG Weak ETag
+GET http://localhost:3000/tours?weak=true
+Accept: application/json
+If-None-Match: 8f3bc8a6718aad66f63990a7a736818
+
+###
+
+### Conditional GET with Last-Modified 
+### (If-Modified-Since > Last-Modified)
+GET http://localhost:3000/tours
+Accept: application/json
+If-Modified-Since: Sun, 27 Oct 2024 09:21:56 GMT
+
+###
+
+### Conditional GET with Last-Modified 
+### (If-Modified-Since < Last-Modified)
+GET http://localhost:3000/tours
+Accept: application/json
+If-Modified-Since: Sun, 27 Oct 2024 09:21:40 GMT
+
+###
