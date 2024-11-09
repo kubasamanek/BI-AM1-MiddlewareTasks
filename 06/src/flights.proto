@@ -1,0 +1,49 @@
+syntax = "proto3";
+
+package flights;
+
+service FlightBookingService {
+    rpc ListBookings (ListBookingsRequest) returns (ListBookingsReply);
+    rpc AddBooking (AddBookingRequest) returns (GeneralReply);
+    rpc RemoveBooking (RemoveBookingRequest) returns (GeneralReply);
+    rpc UpdateBooking (UpdateBookingRequest) returns (GeneralReply);
+}
+
+message Passenger {
+    string first_name = 1;
+    string last_name = 2;
+    string passport_number = 3;
+}
+
+message FlightBooking {
+    string id = 1;
+    Passenger passenger = 2;
+    string departure_airport = 3;
+    string arrival_airport = 4;
+    string departure_date = 5;
+    string arrival_date = 6;
+}
+
+message ListBookingsRequest {}
+
+message ListBookingsReply {
+    repeated FlightBooking bookings = 1;
+}
+
+message AddBookingRequest {
+    FlightBooking booking = 1;
+}
+
+message RemoveBookingRequest {
+    string booking_id = 1;
+}
+
+message UpdateBookingRequest {
+    FlightBooking booking = 1;
+}
+
+message GeneralReply {
+    bool success = 1;
+    string message = 2;
+    FlightBooking booking = 3;
+}
