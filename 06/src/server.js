@@ -7,9 +7,16 @@ const grpcObject = grpc.loadPackageDefinition(packageDefinition);
 const flightsPackage = grpcObject.flights;
 
 const bookings = {};
+const usedIds = new Set();
 
 function generateRandomId() {
-    return 'booking_' + Math.floor(Math.random() * 1000);
+    let newId;
+    do {
+        newId = 'booking_' + Math.floor(Math.random() * 1000);
+    } while (usedIds.has(newId));
+    
+    usedIds.add(newId);
+    return newId;
 }
 
 function ListBookings(call, callback) {
@@ -24,7 +31,9 @@ function AddBooking(call, callback) {
 }
 
 function RemoveBooking(call, callback) {
+    const idToRemove = call.request.bookingId;
     if (bookings[call.request.bookingId]) {  
+        usedIds.delete(idToRemove);
         delete bookings[call.request.bookingId];
         callback(null, { success: true, message: "Booking successfully removed!" });
     } else {
