@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package card;
+
+message BoolValue {
+  bool value = 1;
+}
+
+service CardValidationService {
+  rpc ValidateCard (Card) returns (BoolValue) {}
+}
+
+message Card {
+  string card_number = 1;
+  string card_owner = 2;
+}
