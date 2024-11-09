@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package payment;
+
+service PaymentService {
+    rpc ListPayments (ListPaymentsRequest) returns (ListPaymentsReply);
+    rpc AddPayment (AddPaymentRequest) returns (AddPaymentReply);
+}
+
+message Payment {
+    string id = 1;
+    string card_number = 2;
+    string card_owner = 3;
+    string order_id = 4;
+}
+
+message ListPaymentsRequest {}
+
+message ListPaymentsReply {
+    repeated Payment payments = 1;
+}
+
+message AddPaymentRequest {
+    string card_number = 1;
+    string card_owner = 2;
+    string order_id = 3;
+}
+
+message AddPaymentReply {
+    bool success = 1;
+    string message = 2;
+    Payment payment = 3;
+}
