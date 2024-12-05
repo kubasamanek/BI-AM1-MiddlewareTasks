@@ -1,0 +1,7 @@
+{"type":"booking","details":{"customer":"John Doe","tripId":123}}
+{"type":"booking","details":{"customer":"Jakub Samanek","tripId":456}}
+{"type":"booking","details":{"customer":"Pepa Vomacka","tripId":789,"travelers":["Pani", "Vomackova"]}}
+{"type":"booking","details":{"customer":"Honza Krepelka","tripId":321,"preferences":{"seat":"window","meal":"meat"}}}
+{"type":"trip","details":{"tripName":"Everest","destination":"Nepal"}}
+{"type":"trip","details":{"tripName":"Safari","destination":"Kenya"}}
+{"type":"trip","details":{"tripName":"Explore Prague","destination":"Prague","price":1500}}
