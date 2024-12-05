@@ -9,4 +9,3 @@
 * [Section 07](07/index.md)
 * [Section 08](08/index.md)
 * [Section 09](09/index.md)
-* [Section 10](10/index.md)
